@@ -16,6 +16,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -23,8 +24,9 @@ class Visualizer extends HBox {
     private Algorithm algorithm;
     private ObjectProperty<Step> stepProperty;
 
-    public Visualizer() {
+    public Visualizer(Algorithm algorithm) {
         super();
+        setAlgorithm(algorithm);
         setAlignment(Pos.BOTTOM_LEFT);
         setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
     }

@@ -11,6 +11,10 @@ public class Step extends ArrayList<StepNode> {
         addAll(stepNodes);
     }
 
+    public Step(Step step) {
+        this(step.stream().toList());
+    }
+
     public Step(int[] values) {
         this(Arrays.stream(values)
                 .mapToObj(StepNode::new)

@@ -1,6 +1,8 @@
 package com.algovisualizer.demo;
 
 import com.algovisualizer.model.Algorithm;
+import com.algovisualizer.model.Step;
+import com.algovisualizer.model.StepNode;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -12,24 +14,18 @@ import javafx.stage.Stage;
 
 
 public class Main extends Application {
-    private int[] createNodes() {
-        return new int[] { 3, 3, 4, 4, 7, 2 };
-    }
 
-    private Algorithm[] getAlgorithms(int[] nodes) {
-        return new Algorithm[] {
-                new BubbleSort(nodes)
-        };
-    }
+    private final int[] nodes = new int[] { 3, 3, 4, 4, 7, 2 };
+
+    private final Algorithm[] algorithms = new Algorithm[] {
+            new BubbleSort(nodes),
+    };
 
     private Parent createContent() {
-        int[] nodes = createNodes();
-        Algorithm[] algorithms = getAlgorithms(nodes);
-        Algorithm algorithm = new BubbleSort(nodes);
-        Visualizer viz = new Visualizer();
-        viz.setAlgorithm(algorithm);
-        Button previousStepBtn = new Button("Prev");
-        Button nextStepBtn = new Button("Next");
+        Visualizer viz = new Visualizer(algorithms[1]);
+
+        Button previousStepBtn = new Button("Prev Step");
+        Button nextStepBtn = new Button("Next Step");
 
         previousStepBtn.setOnMouseClicked(mouseEvent -> viz.prev());
         nextStepBtn.setOnMouseClicked(mouseEvent -> viz.next());
