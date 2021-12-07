@@ -22,7 +22,7 @@ public class Main extends Application {
     };
 
     private Parent createContent() {
-        Visualizer viz = new Visualizer(algorithms[1]);
+        Visualizer viz = new Visualizer(algorithms[0]);
 
         Button previousStepBtn = new Button("Prev Step");
         Button nextStepBtn = new Button("Next Step");
