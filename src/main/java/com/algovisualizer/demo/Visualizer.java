@@ -64,12 +64,12 @@ class Visualizer extends HBox {
         getChildren().setAll(bars);
     }
 
-    public void next() {
+    public void next() throws NullPointerException {
         algorithm.setPointer(algorithm.getPointer() + 1);
         stepProperty.set(algorithm.getCurrentStep());
     }
 
-    public void prev() {
+    public void prev() throws NullPointerException {
         algorithm.setPointer(algorithm.getPointer() - 1);
         stepProperty.set(algorithm.getCurrentStep());
     }
